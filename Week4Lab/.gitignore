@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+chatlog_good/
+chatlog_bad/

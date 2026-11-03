@@ -1,0 +1,24 @@
+
+=== BotShield demo ===
+Store: mobile-app product drop, 100 units at t=60s + 50 restock at t=360s, limit 2 per account
+Benign: 250 drop-day shoppers (20% fast 'enthusiasts', shared household phones, carrier NAT,
+        campus Wi-Fi, 4% rooted phones, 10% brand-new phones) + 150 background shoppers
+
+[1] NORMAL SYSTEM (no attacker)
+  no defense                 bots got   0/150  humans got 150   bots detected   n/a   benign flagged  0.0%   scoring   0.5 us/req
+
+[2] ATTACK: S6: 30 emulators with human-like timing, injected touches, fake sensors
+  no defense                 bots got  55/150  humans got  95   bots detected    0%   benign flagged  0.0%   scoring   0.5 us/req
+  rate limit (baseline)      bots got  55/150  humans got  95   bots detected    0%   benign flagged  0.0%   scoring   1.2 us/req
+
+[3] DEFENSE (thresholds calibrated on benign traffic only)
+  device-only                bots got   0/150  humans got 150   bots detected  100%   benign flagged  5.8%   scoring  47.9 us/req
+  behavior-only              bots got  55/150  humans got  95   bots detected    0%   benign flagged  1.5%   scoring  47.3 us/req
+  BotShield (combined)       bots got   0/150  humans got 150   bots detected  100%   benign flagged  2.5%   scoring  46.1 us/req
+
+[4] WHY: score breakdown (monitor mode, max score per account)
+  thresholds: throttle R>=0.2503, challenge R>=0.2836, block R>=0.466
+  median bot account   acct-x22     D=0.45  B=0.13  R=1-(1-D)(1-B)=0.52
+  98th-pct benign acct acct-b155    D=0.00  B=0.29  R=0.29
+
+Telemetry for the BotShield run written to evidence/telemetry_demo.sqlite (table 'requests').

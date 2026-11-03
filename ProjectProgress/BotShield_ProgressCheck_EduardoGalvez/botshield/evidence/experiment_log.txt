@@ -1,0 +1,40 @@
+Calibrating thresholds on benign-only traffic (seeds 101-105)...
+{
+  "device_only": {
+    "throttle": 0.1317,
+    "challenge": 0.15,
+    "block": 0.2783
+  },
+  "behavior_only": {
+    "throttle": 0.2231,
+    "challenge": 0.2513,
+    "block": 0.3434
+  },
+  "botshield": {
+    "throttle": 0.2503,
+    "challenge": 0.2836,
+    "block": 0.466
+  }
+}
+  benign_only              done (13s)
+  single_bot               done (21s)
+  multi_acct_same_device   done (30s)
+  rotating_ids             done (43s)
+  high_freq_monitor        done (52s)
+  parallel_checkout        done (62s)
+  timing_mimicry           done (72s)
+  phone_farm_rotation      done (86s)
+  phone_farm_scripted      done (99s)
+  phone_farm_mimicry       done (110s)
+  ROC single_bot           done (116s)
+  ROC multi_acct_same_device done (124s)
+  ROC rotating_ids         done (133s)
+  ROC high_freq_monitor    done (140s)
+  ROC parallel_checkout    done (147s)
+  ROC timing_mimicry       done (155s)
+  ROC phone_farm_rotation  done (169s)
+  ROC phone_farm_scripted  done (178s)
+  ROC phone_farm_mimicry   done (186s)
+Done in 186s. Results in evidence/
+Figures written to evidence/
+FINISHED

@@ -1,0 +1,17 @@
+{
+  "device_only": {
+    "throttle": 0.1317,
+    "challenge": 0.15,
+    "block": 0.2783
+  },
+  "behavior_only": {
+    "throttle": 0.2231,
+    "challenge": 0.2513,
+    "block": 0.3434
+  },
+  "botshield": {
+    "throttle": 0.2503,
+    "challenge": 0.2836,
+    "block": 0.466
+  }
+}
